@@ -27,10 +27,10 @@ jobs:
         npm run build --if-present
        # npm run test --if-present
 
-    - name: Read package.json
+    - name: Read tsconfig.json
       id: package
-      uses: saurabhrai19/copyfileaction@v1.2
+      uses: saurabhrai19/copyfileaction@v1.3
       with:
-        path: ./README.md
-    - name: Echo package.json
+        path: ./tsconfig.json
+    - name: Echo tsconfig.json
       run: echo "${{ steps.package.outputs.content }}"
