@@ -21,9 +21,21 @@ jobs:
       with:
         node-version: '12.x'
 
-    - name: npm install, build, and test
+    - name: Startup Command
+      id: hola
+      uses: saurabhrai19/startupcmdaction@v1.8
+      with:
+        language: angular 
+    - name: Echo Startup Command
+      run: echo "${{ steps.hola.outputs.startupcmd }}"
+    
+    - name: installing dependencies
       run: |
-        npm install
+        "${{ steps.hola.outputs.startupcmd }}"
+        
+    - name: npm build, and test
+      run: |
+        #npm install
         npm run build --if-present
        # npm run test --if-present
 
