@@ -31,7 +31,7 @@ jobs:
     
     - name: installing dependencies
       run: |
-        "${{ steps.hola.outputs.startupcmd }}"
+        ${{ steps.hola.outputs.startupcmd }}
         
     - name: npm build, and test
       run: |
