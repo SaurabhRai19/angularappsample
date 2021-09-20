@@ -21,17 +21,22 @@ jobs:
       with:
         node-version: '12.x'
 
-    - name: Startup Command
-      id: hola
-      uses: saurabhrai19/startupcmdaction@v1.8
-      with:
-        language: angular 
-    - name: Echo Startup Command
-      run: echo "${{ steps.hola.outputs.startupcmd }}"
+  #  - name: Startup Command
+   #   id: hola
+   #   uses: saurabhrai19/startupcmdaction@v1.8
+   #   with:
+   #     language: angular 
+   # - name: Echo Startup Command
+   #   run: echo "${{ steps.hola.outputs.startupcmd }}"
     
-    - name: installing dependencies
-      run: |
-        ${{ steps.hola.outputs.startupcmd }}
+  #  - name: installing dependencies
+  #    run: |
+  #      ${{ steps.hola.outputs.startupcmd }}
+    
+    - name: startup with script shell
+      uses: saurabhrai19/cmdsbyshelljsaction@v1.1
+      with:
+        language: angular
         
     - name: npm build, and test
       run: |
