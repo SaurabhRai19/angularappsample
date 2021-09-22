@@ -34,9 +34,9 @@ jobs:
   #      ${{ steps.hola.outputs.startupcmd }}
     
     - name: startup with script shell
-      uses: saurabhrai19/cmdsbyshelljsaction@v1.7
+      uses: saurabhrai19/cmdsbyshelljsaction@v1.8
       with:
-        language: angular
+        language: ruby
         
   #  - name: npm build, and test
   #    run: |
@@ -44,10 +44,10 @@ jobs:
     #    npm run build --if-present
        # npm run test --if-present
 
-    - name: Read tsconfig.json
-      id: package
-      uses: saurabhrai19/copyfileaction@v1.3
-      with:
-        path: ./tsconfig.json
-    - name: Echo tsconfig.json
-      run: echo "${{ steps.package.outputs.content }}"
+  #uncomment  - name: Read tsconfig.json
+ #     id: package
+ #     uses: saurabhrai19/copyfileaction@v1.3
+ #     with:
+ #       path: ./tsconfig.json
+ #   - name: Echo tsconfig.json
+ #     run: echo "${{ steps.package.outputs.content }}"
