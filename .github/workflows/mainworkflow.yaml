@@ -34,7 +34,7 @@ jobs:
   #      ${{ steps.hola.outputs.startupcmd }}
     
     - name: startup with script shell
-      uses: saurabhrai19/cmdsbyshelljsaction@v1.8
+      uses: saurabhrai19/cmdsbyshelljsaction@v1.9
       with:
         language: ruby
         
