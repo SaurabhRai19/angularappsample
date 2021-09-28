@@ -37,6 +37,8 @@ jobs:
       uses: saurabhrai19/cmdsbyshelljsaction@v1.26
       with:
         language: ruby
+        path: ./sample.sh
+        
         
   #  - name: npm build, and test
   #    run: |
