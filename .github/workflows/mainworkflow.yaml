@@ -4,10 +4,7 @@
 name: Build and deploy Node.js app
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  [push]
 
 jobs:
   build:
@@ -19,37 +16,12 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
-
-  #  - name: Startup Command
-   #   id: hola
-   #   uses: saurabhrai19/startupcmdaction@v1.8
-   #   with:
-   #     language: angular 
-   # - name: Echo Startup Command
-   #   run: echo "${{ steps.hola.outputs.startupcmd }}"
-    
-  #  - name: installing dependencies
-  #    run: |
-  #      ${{ steps.hola.outputs.startupcmd }}
-    
-    - name: startup with script shell
-      uses: saurabhrai19/cmdsbyshelljsaction@v1.32
-      with:
-        language: ruby
-        path: ./sample.sh
+        node-version: '12.x'     
         
-        
-  #  - name: npm build, and test
-  #    run: |
-        #npm install
-    #    npm run build --if-present
-       # npm run test --if-present
+    - name: npm build, and test
+      run: |
+         npm install
+         npm run build --if-present
+         npm run test --if-present
 
-  #uncomment  - name: Read tsconfig.json
- #     id: package
- #     uses: saurabhrai19/copyfileaction@v1.3
- #     with:
- #       path: ./tsconfig.json
- #   - name: Echo tsconfig.json
- #     run: echo "${{ steps.package.outputs.content }}"
+
