@@ -31,14 +31,16 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install Dependencies
+      - name: Install Dependencies if Cache not saved
         if: steps.cache-node.outputs.cache-hit != 'true'
         run: npm install
-
+      
+      
+      - name: Check Cache Hit
+        if: steps.cache-node.outputs.cache-hit == 'true'
+        run: echo 'Cache Hit!!'
+      
       - name: Build
         run: npm build
         
-      - name: Check Cache Hit
-        if: steps.cache-node.outputs.cache-hit != 'true'
-        run: echo 'Cache Hit!!'
 
