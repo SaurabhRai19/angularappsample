@@ -36,7 +36,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm build
         
       - name: Check Cache Hit
         if: steps.cache-node.outputs.cache-hit != 'true'
