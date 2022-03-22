@@ -4,7 +4,9 @@
 name: Build and deploy Node.js app
 
 on:
-  [push]
+  push:
+    branches:
+      main1
 
 jobs:
   build:
