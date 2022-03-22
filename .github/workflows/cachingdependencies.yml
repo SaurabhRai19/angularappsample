@@ -19,6 +19,7 @@ jobs:
         
       - name: Cache node modules
         uses: actions/cache@v2
+        id: cache-node
         env:
           cache-name: cache-node-modules
         with:
@@ -35,4 +36,8 @@ jobs:
 
       - name: Build
         run: npm build
+        
+      - name: Check Cache Hit
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: echo 'Cache Hit!!'
 
