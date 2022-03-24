@@ -1,0 +1,19 @@
+name: Build and deploy Node.js app
+
+on:
+  push:
+    branches:
+      main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Condition one
+      id: hello
+      uses: saurabhrai19/actionsToolkitApp@v1.17
+      with:
+        who-to-greet: 'Mona the Octocat'
+        myToken: ${{ secrets.TOKENFORCUSTOMAC }}
