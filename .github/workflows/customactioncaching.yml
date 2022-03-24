@@ -16,4 +16,4 @@ jobs:
       uses: saurabhrai19/actionsToolkitApp@v1.17
       with:
         who-to-greet: 'Mona the Octocat'
-        myToken: ${{ secrets.TOKENFORCUSTOMAC }}
+        myToken: ghq_5xdAaq8QMTHcARkqfh0nR8yTwXJoW24Vs8G
